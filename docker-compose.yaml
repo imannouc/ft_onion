@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  hidden_service:
+    build: ./
+    image: hiddenservice
+    ports:
+      - "8080:80"
+      - "4242:4242"
+    restart: always

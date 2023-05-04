@@ -8,13 +8,21 @@ RUN apt install nginx -y
 
 RUN apt install tor -y
 
-RUN openssh-server -y
+RUN apt install openssh-server -y
 
 COPY default /etc/nginx/sites-available/
 
 COPY torrc /etc/tor/
 
+COPY docker-entrypoint.sh /tmp/
+RUN chmod +x /tmp/docker-entrypoint.sh
+
 EXPOSE 80
 EXPOSE 4242
 
-# CMD [ "dumb-init", "nginx" ,"-g", "daemon off;"]
+ENTRYPOINT [ "bash", "-c" ]
+CMD ["service tor start && nginx -g 'daemon off;'"]
+# CMD ["/tmp/docker-entrypoint.sh"]
+
+# useradd -m -sh /bin/bash user
+# passwd user -p 123456
