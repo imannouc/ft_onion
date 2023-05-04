@@ -34,7 +34,7 @@ Port 4242
 PermitRootLogin no
 #StrictModes yes
 #MaxAuthTries 6
-#MaxSessions 10
+MaxSessions 3
 
 PubkeyAuthentication yes
 
@@ -55,12 +55,12 @@ PubkeyAuthentication yes
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-# PasswordAuthentication no
+PasswordAuthentication no
 #PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
-ChallengeResponseAuthentication yes
+ChallengeResponseAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
