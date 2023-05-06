@@ -12,6 +12,10 @@ COPY torrc /etc/tor/
 COPY default /etc/nginx/sites-available/
 COPY sshd_config /etc/ssh/
 
+RUN rm /var/www/html/index.nginx-debian.html
+COPY index.html /var/www/html/
+COPY 42.png /var/www/html/
+
 RUN useradd -m test
 RUN mkdir /home/test/.ssh
 COPY authorized_keys /home/test/.ssh

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .whatever {
+            height: 50%;
+            width: 50%;
+            display: none;
+        }
+        p {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="handler()">Click me</button>
+    <div class="whatever" onclick="handler()">
+        <img src="42.png" alt="The answer to life, the universe, and everything">
+        <p>The answer to life, the universe, and everything</p>
+    </div>
+    <script>
+        handler = () => {
+            let btn = document.getElementsByTagName('button')[0];
+            let div = document.getElementsByClassName('whatever')[0];
+            (btn.style.display == 'none') ? btn.style.display = 'block' : btn.style.display = 'none';
+            (div.style.display == 'block') ? div.style.display = 'none' : div.style.display = 'block';
+        }
+    </script> 
+</body>
+</html>
